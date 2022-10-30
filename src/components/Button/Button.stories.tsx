@@ -13,12 +13,6 @@ export const Default = () => (
     </PageWrapper>
 );
 
-export const Secondary = () => (
-    <PageWrapper>
-        <Button secondary>Secondary</Button>
-    </PageWrapper>
-);
-
 export const Disabled = () => (
     <PageWrapper>
         <Button disabled>Disabled</Button>

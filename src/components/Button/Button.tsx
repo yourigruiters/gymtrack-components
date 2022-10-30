@@ -1,20 +1,18 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
 
 import { Wrapper } from './styled';
 
 export type ButtonProps = {
-    children?: ReactNode;
+    className?: string;
+    id?: string;
     disabled?: boolean;
     onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
-    secondary?: boolean;
-    type?: 'button';
+    type?: 'button' | 'submit' | 'reset';
 };
 
-const Button: React.FC<ButtonProps> = (props) => {
-    const { children, disabled = false, onClick, secondary = false, type = 'button', ...rest } = props;
-
+const Button: React.FC<ButtonProps> = ({ className, id, children, disabled = false, onClick, type = 'button' }) => {
     return (
-        <Wrapper disabled={disabled} onClick={onClick} type={type}>
+        <Wrapper disabled={disabled} onClick={onClick} type={type} className={className} id={id}>
             {children}
         </Wrapper>
     );
